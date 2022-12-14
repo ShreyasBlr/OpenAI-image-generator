@@ -19,13 +19,21 @@
 <body>
     <div class="main-wrapper">
         <div class="form-wrapper">
+            <div class="main-heading">
+                <h1>Generate Images using</h1>
+                <a href="https://beta.openai.com/docs/guides/images/image-generation-beta" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="./assets/img/openAI-logo.png" alt="OpenAI logo" width="150">
+                </a>
+            </div>
             <form class="prompt-size-form">
                 <div class="form-group">
-                    <label for="prompt">Describe the image you want</label>
-                    <textarea class="form-control" name="prompt" id="prompt" cols="30" rows="5"></textarea>
+                    <label for="prompt">Prompt</label>
+                    <textarea class="form-control" name="prompt" id="prompt" cols="30" rows="5"
+                        placeholder="Describe the image you want to generate"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="prompt">Select size of the image</label>
+                    <label for="prompt">Image size</label>
                     <select class="form-control" name="image-size" id="image-size">
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
@@ -38,7 +46,10 @@
             </form>
         </div>
         <div class="image-wrapper">
-            <img class="generated-img" src="./assets/img/placeholder-img.png" alt="">
+            <div class="img-container">
+                <img class="generated-img" src="./assets/img/placeholder-img.png" alt="">
+                <!-- <img class="generated-img" src="./assets/img/1024x1024-test-img.jpg" alt=""> -->
+            </div>
         </div>
     </div>
 </body>
