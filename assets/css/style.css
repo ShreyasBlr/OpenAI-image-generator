@@ -1,0 +1,42 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+.main-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+}
+
+.form-wrapper {
+    width: 30%;
+    height: 100%;
+    padding: 0px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-group .submit-btn {
+    cursor: pointer;
+}
+
+.image-wrapper {
+    width: 70%;
+    height: 100%;
+    background: #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
