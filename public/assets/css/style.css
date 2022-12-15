@@ -108,11 +108,13 @@
 @media (min-width: 1024px) {
   .main-wrapper {
     flex-direction: row;
+    justify-content: space-evenly;
     padding: 10px;
   }
 
   .image-wrapper {
     width: 70%;
+    max-width: 1034px;
     height: 100%;
     margin-bottom: 0px;
   }
@@ -120,7 +122,6 @@
   .form-wrapper {
     width: 30%;
     height: 100%;
-    padding: 0px 10px 0px 0px;
   }
 }
 

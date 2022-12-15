@@ -8,6 +8,7 @@ function onSubmit(event) {
 async function generateImageRequest(prompt, size) {
   try {
     showSpinner();
+    // reset();
     const response = await fetch("/openai/generateImg", {
       method: "POST",
       headers: {
@@ -35,11 +36,11 @@ function hideSpinner() {
   document.querySelector(".spinner-container").classList.remove("show");
 }
 
-function reset() {
-  document.querySelector("#prompt").value = "";
-  document.querySelector(".generated-img").src =
-    "./assets/img/placeholder-img.png";
-}
+// function reset() {
+//   document.querySelector("#prompt").value = "";
+//   document.querySelector(".generated-img").src =
+//     "./assets/img/placeholder-img.png";
+// }
 
 document
   .querySelector(".prompt-size-form")
