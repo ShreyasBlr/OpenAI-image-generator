@@ -2,9 +2,9 @@
   "name": "openai-image-generator",
   "version": "1.0.0",
   "description": "Generate images using OpenAI Image Generation API",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index"
+    "start": "node app"
   },
   "repository": {
     "type": "git",
