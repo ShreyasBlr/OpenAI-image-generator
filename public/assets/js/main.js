@@ -33,7 +33,6 @@ async function generateImageRequest(prompt, size) {
     const { imageUrl } = await response.json();
     document.querySelector(".generated-img").src = imageUrl;
   } catch (error) {
-    hideSpinner();
     console.log(error);
   }
 }
