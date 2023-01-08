@@ -2,28 +2,54 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  font-family: "poppins";
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: rgb(22, 28, 36);
+  width: 100vw;
+  height: 100vh;
 }
 
 .main-wrapper {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: flex-end;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.main-heading {
-  margin-bottom: 30px;
-  text-align: center;
+.form-wrapper,
+.image-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .form-wrapper {
-  width: 100%;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10px;
+}
+
+.form-wrapper .main-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+.form-wrapper .main-heading h1 {
+  color: #ffffff;
+  font-size: 1.8em;
+  font-family: "Montserrat";
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.form-wrapper .main-heading img {
+  width: 100px;
 }
 
 .form-wrapper form {
@@ -33,61 +59,76 @@
   align-items: center;
 }
 
-.form-group {
+.form-wrapper .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
-  width: 90%;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .form-group label {
-  font-weight: 500;
+  font-weight: 300;
   font-size: 1.1rem;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: #ffffff;
 }
 
-.form-group .form-control {
-  padding: 5px;
+.form-wrapper .form-group .form-control {
+  padding: 16.5px 14px;
   border-radius: 5px;
   font-size: 1rem;
-  color: #000000;
-  background: #ffffff;
-  border: 1px solid #181818;
+  line-height: 1.437rem;
+  color: rgb(99, 115, 129);
+  background: transparent;
+  border: 1px solid;
+  border-color: rgba(145, 158, 171, 0.32);
+  outline: none;
 }
 
-.form-group select.form-control {
-  height: 45px;
+.form-wrapper .form-group textarea.form-control {
+  height: 85px;
 }
 
-.form-group .submit-btn {
+.form-wrapper .form-group .submit-btn {
   cursor: pointer;
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #212b36;
   border-radius: 5px;
   padding: 5px 2px;
   height: 45px;
   border: 1px solid #000000;
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 1.1rem;
   text-transform: capitalize;
   transition: all 0.2s ease-in-out;
 }
 
-.form-group .submit-btn:hover {
-  background: #181818;
-  color: #ffffff;
-  transform: scale(0.99);
+.form-wrapper .form-group .submit-btn:hover {
+  transform: scale(0.995);
 }
 
 .image-wrapper {
-  width: 100%;
-  background: #eaeaea;
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.bg-overlay {
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scaleX(-1);
+  background: linear-gradient(rgba(22, 28, 36, 0.94), rgba(22, 28, 36, 0.94))
+      center center / cover no-repeat,
+    url(../img/overlay_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .image-wrapper .img-container {
@@ -105,37 +146,59 @@
   border-radius: 10px;
 }
 
-@media (min-width: 1024px) {
+.spinner-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-container.show {
+  display: flex;
+}
+
+@media (min-width: 768px) {
   .main-wrapper {
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 10px;
+    width: 400px;
+    height: 100vh;
   }
-
-  .image-wrapper {
-    width: 70%;
-    max-width: 1034px;
-    height: 100%;
-    margin-bottom: 0px;
-  }
-
-  .form-wrapper {
-    width: 30%;
-    height: 100%;
+  .form-wrapper .form-group textarea.form-control {
+    height: 100px;
   }
 }
 
-@media (max-width: 400px) {
+@media (min-width: 1024px) {
+  .main-wrapper {
+    width: 100vw;
+    flex-direction: row;
+  }
+  .form-wrapper .main-heading img {
+    width: 120px;
+  }
+  .form-wrapper .form-group textarea.form-control {
+    height: 150px;
+  }
+  .form-wrapper {
+    flex: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 40px;
+  }
+  .form-wrapper .main-heading {
+    text-align: left;
+  }
   .image-wrapper {
-    margin-bottom: 20px;
+    flex: 3;
+    height: 100%;
+    padding: 50px 30px;
   }
 
-  .main-heading {
-    margin-bottom: 20px;
-  }
-
-  .main-heading h1 {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
+  .image-wrapper .img-container {
+    min-height: 40vh;
   }
 }
