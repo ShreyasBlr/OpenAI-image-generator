@@ -1,4 +1,4 @@
-const imageGenerator = "image-generator-site-v1";
+const imageGenerator = "image-generator-site-v1.2";
 const assets = [
   "/",
   "/index.html",
